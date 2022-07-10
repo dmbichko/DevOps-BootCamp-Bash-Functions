@@ -6,6 +6,7 @@ function pow () {
 function shortest() {
 i=0
 flag=0
+#IFS=\" \"
 IFS=',' read -r -a array <<< "$1"
 for ARG in ${array[*]}; do
 	lenght=${#ARG}
@@ -29,7 +30,8 @@ done
 	[ $flag == 0 ] && echo $min_str
 }
 function print_log () {
-        echo  "["$(date +"%Y-%m-%d %H:%M")"]" $1
+        #echo  "["$(date +"%Y-%m-%d %H:%M")"]" $1
+	echo "[$(date +'%Y-%m-%d %H:%M')] $1"
 }
 
 # Put your code here
