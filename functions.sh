@@ -6,8 +6,8 @@ function pow () {
 function shortest() {
 i=0
 flag=0
- for ARG in "$@"
- do
+IFS=',' read -r -a array <<< "$1"
+for ARG in ${array[*]}; do
 	lenght=${#ARG}
 	if [ $i == 0 ]; then
 		min_lenght=$lenght
@@ -17,10 +17,9 @@ flag=0
 		min_str=$ARG
 		min_lenght=$lenght
 	fi
-	 #echo $ARG
 	let "i=i+1 "
 done
-for ARG in "$@"
+for ARG in ${array[*]}
 do
 	if [[ $min_lenght -eq ${#ARG} ]]; then
 		flag=1
