@@ -7,8 +7,9 @@ function shortest() {
 i=0
 flag=0
 #IFS=\" \"
-IFS=',' read -r -a array <<< "$1"
-for ARG in ${array[*]}; do
+#IFS=',' read -r -a array <<< "$1"
+#for ARG in ${array[*]}; do
+for ARG in "$@"; do
 	lenght=${#ARG}
 	if [ $i == 0 ]; then
 		min_lenght=$lenght
@@ -20,8 +21,8 @@ for ARG in ${array[*]}; do
 	fi
 	let "i=i+1 "
 done
-for ARG in ${array[*]}
-do
+#for ARG in ${array[*]}
+for ARG in "$@"; do
 	if [[ $min_lenght -eq ${#ARG} ]]; then
 		flag=1
 		echo $ARG
