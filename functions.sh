@@ -34,7 +34,7 @@ done
 }
 function print_log () {
         #echo  "["$(date +"%Y-%m-%d %H:%M")"]" $1
-	echo "[$(date +'%Y-%m-%d %H:%M')] $1"
+	echo "[$(date +'%Y-%m-%d %H:%M')] $@"
 }
 
 # Put your code here
