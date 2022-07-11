@@ -28,7 +28,9 @@ for ARG in "$@"; do
 		echo $ARG
 	fi
 done
-	[ $flag == 0 ] && echo $min_str
+	if [ $flag == 0 ]; then
+		echo ${min_str}
+	fi
 }
 function print_log () {
         #echo  "["$(date +"%Y-%m-%d %H:%M")"]" $1
